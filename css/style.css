@@ -117,12 +117,15 @@ margin: 100px 20px;
   justify-content: center;
   align-items: center;
 }
-.checkout button{
+.checkout-btn{
   background-color: #CBCBCB;
   width: 364px;
   height: 61px;
   border-radius: 50px;
   border: none;
+}
+.btn-disabler{
+  display: none;
 }
 .checkout p{
   font-family: Roboto;
