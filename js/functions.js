@@ -1,9 +1,13 @@
+let arr = [false, false, false];
+
 function togglePrato(prato) {
   const pratoClicada = document.querySelector(".prato.selected");
   if (pratoClicada !== null) {
     pratoClicada.classList.remove("selected");
   }
   prato.classList.add("selected");
+  arr[0] = true;
+  checkSelected();
 }
 
 function toggleBebida(bebida) {
@@ -12,6 +16,8 @@ function toggleBebida(bebida) {
     bebidaClicada.classList.remove("selected");
   }
   bebida.classList.add("selected");
+  arr[1] = true;
+  checkSelected();
 }
 
 function toggleSobremesa(sobremesa) {
@@ -20,9 +26,14 @@ function toggleSobremesa(sobremesa) {
     sobremesaClicada.classList.remove("selected");
   }
   sobremesa.classList.add("selected");
+  arr[2] = true;
+  checkSelected();
 }
 
-if (pratoClicada == null && bebidaClicada == null && sobremesaClicada == null) {
-  const btn = document.querySelector(".checkout");
-  classList.add(".btn-disabler");
+function checkSelected() {
+  if (arr[0] == true && arr[1] == true && arr[2] == true) {
+    const btn = document.querySelector(".checkout-btn");
+    btn.classList.add("btn-changer");
+    btn.innerHTML = "<p>Fechar pedido</p>";
+  }
 }
