@@ -30,10 +30,20 @@ function toggleSobremesa(sobremesa) {
   checkSelected();
 }
 
+function btnClicked() {
+  if (checkSelected() === true) {
+    const chk = document.querySelector(".check-order");
+    chk.classList.add("check");
+    const ord = document.querySelector(".confirm-order");
+    ord.classList.add("confirmed");
+  }
+}
+
 function checkSelected() {
   if (arr[0] == true && arr[1] == true && arr[2] == true) {
     const btn = document.querySelector(".checkout-btn");
     btn.classList.add("btn-changer");
     btn.innerHTML = "<p>Fechar pedido</p>";
+    return true;
   }
 }
